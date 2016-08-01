@@ -28,4 +28,5 @@ Temporary Items
 .apdisk
 
 # Coursera specific files
-token.mat # do not track the login credentials...
+# do not track the login credentials...
+token.mat
