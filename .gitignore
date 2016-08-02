@@ -30,3 +30,6 @@ Temporary Items
 # Coursera specific files
 # do not track the login credentials...
 token.mat
+
+# Octave specific files
+octave-workspace
