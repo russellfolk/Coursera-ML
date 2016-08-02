@@ -17,16 +17,16 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
-
-
-
-
+    % update theta in place via vectorization. 
+    theta = theta - (alpha * 1/m * (X * theta - y)' * X)';
 
     % ============================================================
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
+    % print out the cost function to verify the correct output...
+    %if iter % 50 == 0
+    %    fprintf('The cost is: %f\n', J_history(iter));
 
 end
 
