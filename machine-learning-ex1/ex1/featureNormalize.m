@@ -26,12 +26,13 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-
-
-
-
-
-
+mu = mean(X);
+sigma = std(X);
+% for each feature in X, normalize...
+for feature = 1:size(X,2)
+	X_norm(:, feature) = (X_norm(:, feature) - mu(feature)) ...
+	/ sigma(feature);
+end
 
 
 % ============================================================
