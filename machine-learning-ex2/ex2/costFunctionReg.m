@@ -34,9 +34,19 @@ end
 	
 J = (1/m) * running_sum + (lambda/(2*m)) * regularized_sum;
 
+% Compute the partial derivatives of each parameter for the gradient
+% remember to regularize the gradient for theta > 0 (in Octave, theta > 1)
+sum_term = sigmoid(X * theta) - y;
 
-
-
+for index_j = 1:size(theta)
+	for index = 1:m
+		grad(index_j,:) += X(index,index_j) .* sum_term(index,:);
+	end
+	grad(index_j,:) = (1/m) .* grad(index_j,:);
+	if (index_j > 1)
+		grad(index_j,:) += (lambda/m) * theta(index_j);
+	end
+end
 
 % =============================================================
 
