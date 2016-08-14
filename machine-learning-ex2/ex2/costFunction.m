@@ -24,8 +24,8 @@ grad = zeros(size(theta));
 % of features: J = 1/m * sum(-y*log(h(x))-(1-y)log(1-h(x)))
 running_sum = 0;
 for index = 1:m
-	h_t = sigmoid(theta * X(index, :));
-	running_sum += ((-y(index,:)*log(h_t)) - ((1-y(index,:))*log(1 - h_t)));
+	h_t = sigmoid(dot(theta', X(index,:)));
+	running_sum += (-y(index,:)*log(h_t) - (1-y(index,:))*log(1-h_t));
 end
 	
 J = (1/m) * running_sum;
