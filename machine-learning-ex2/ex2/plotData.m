@@ -12,13 +12,15 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
+% Find Indices of Positive and Negative Examples
+positive_examples = find(y == 1);
+negative_examples = find(y == 0);
 
-
-
-
-
-
-
+% Plot Examples
+plot(X(positive_examples, 1), X(positive_examples, 2), 'k+', 'LineWidth', 2, ...
+'MarkerSize', 7);
+plot(X(negative_examples, 1), X(negative_examples, 2), 'ko', 'LineWidth', 2, ...
+'MarkerFaceColor', 'y', 'MarkerSize', 7);
 
 % =========================================================================
 
