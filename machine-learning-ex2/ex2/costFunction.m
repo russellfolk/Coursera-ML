@@ -30,6 +30,16 @@ end
 	
 J = (1/m) * running_sum;
 
+% Compute the partial derivatives of each parameter for the gradient
+sum_term = sigmoid(X * theta) - y;
+
+for index_j = 1:size(theta)
+	for index = 1:m
+		grad(index_j,:) += X(index,index_j) .* sum_term(index,:);
+	end
+	grad(index_j,:) = (1/m) .* grad(index_j,:);
+end
+
 % =============================================================
 
 end
